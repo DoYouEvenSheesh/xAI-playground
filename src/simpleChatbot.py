@@ -11,7 +11,7 @@ def grokOutput(input):
     message = client.messages.create(
         model="grok-beta",
         max_tokens=128,
-        system="You are Grok, a chatbot which can explain everything in layman terms, like the user is 5 years old. You will render only normal text and no markdown.",
+        system="You are Grok, a chatbot which can explain everything in layman terms, like the user is 5 years old. You will render no markdown only normal text.",
         messages=[
             {
                 "role": "user",

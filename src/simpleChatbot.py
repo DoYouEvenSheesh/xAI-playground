@@ -11,7 +11,7 @@ def grokOutput(input):
     message = client.messages.create(
         model="grok-beta",
         max_tokens=128,
-        system="You are Grok, a chatbot which can explain everything in layman terms, like the user is 5 years old.",
+        system="You are Grok, a chatbot which can explain everything in layman terms, like the user is 5 years old. You will render only normal text and no markdown.",
         messages=[
             {
                 "role": "user",
@@ -21,11 +21,13 @@ def grokOutput(input):
     )
     print("Grok: " +str(message.content))
 
+print("This is laymangrok, it can explain all your queries like you are five years old. Enter 'quit' to exit.")
+    
 while True:
-    print("This is laymangrok, it can explain all your queries like you are five years old. Enter 'quit' to exit.")
     inputString = str(input())
     if inputString == "quit":
-        sys.exit()
+     sys.exit()
     grokOutput(inputString)
+    print("----------------------------------------------------------------------------------------------------------------")
 
 
